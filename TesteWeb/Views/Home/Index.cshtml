@@ -1,0 +1,43 @@
+﻿@model IEnumerable < TesteWeb.Models.Visitante >
+    
+@{
+    ViewBag.Title = "Visitantes";
+}
+
+<div class="jumbotron">
+    <h1>Visitantes</h1>
+    <p class="lead">Aqui listamos os visitantes. É possível registrar aqui.</p>
+</div>
+
+<h2>Visitantes</h2>
+
+<p>
+    @Html.ActionLink("Novo Registro de Visitante", "Create")
+</p>
+
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Nome)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Mensagem)
+        </th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Nome)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Mensagem)
+            </td>
+            <td>
+                @Html.ActionLink("Detalhes", "Details", new { id = item.Id })
+            </td>
+        </tr>
+    }
+
+</table>

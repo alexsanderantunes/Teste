@@ -1,0 +1,40 @@
+﻿@model TesteWeb.Models.Visitante
+
+@{
+    ViewBag.Title = "Detalhes";
+}
+
+
+<h2>Detalhes</h2>
+
+<div>
+    <h4>Visitante</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Nome)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Nome)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Mensagem)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Mensagem)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Endereco)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Endereco)
+        </dd>
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Retornar", "Index")
+</p>
